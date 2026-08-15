@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteForge - Text to App Builder</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div id="app" class="ide-container">
+        <!-- Header -->
+        <header class="ide-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>SiteForge</h1>
+            </div>
+            <div class="header-actions">
+                <button id="btn-new" class="btn btn-secondary">New Project</button>
+                <button id="btn-download" class="btn btn-primary">Download</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="ide-main">
+            <!-- Left Panel - Input & Templates -->
+            <aside class="panel left-panel">
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="generator">Generator</button>
+                    <button class="tab-btn" data-tab="templates">Templates</button>
+                </div>
+
+                <div class="tab-content active" id="tab-generator">
+                    <div class="input-section">
+                        <label for="prompt-input">Describe your app or website:</label>
+                        <textarea id="prompt-input" placeholder="Example: Create a restaurant website with dark theme, blue accent color, featuring about us, menu, services, testimonials, and contact sections."></textarea>
+                        <button id="btn-generate" class="btn btn-primary btn-full">Generate Site</button>
+                    </div>
+
+                    <div class="detected-info" id="detected-info" style="display: none;">
+                        <h3>Detected:</h3>
+                        <div class="chips" id="detection-chips"></div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-templates">
+                    <div class="template-gallery" id="template-gallery">
+                        <!-- Template cards injected here -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Panel - Preview & Code -->
+            <section class="panel right-panel">
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="preview">Preview</button>
+                    <button class="tab-btn" data-tab="code">Code</button>
+                    <button class="tab-btn" data-tab="mvc">MVC Structure</button>
+                </div>
+
+                <div class="tab-content active" id="tab-preview">
+                    <div class="preview-container">
+                        <iframe id="preview-frame" title="Site Preview"></iframe>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-code">
+                    <div class="code-viewer">
+                        <pre><code id="code-output"></code></pre>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-mvc">
+                    <div class="mvc-viewer">
+                        <div class="mvc-tree" id="mvc-tree"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Status Bar -->
+        <footer class="ide-status">
+            <span id="status-message">Ready</span>
+            <span id="project-info"></span>
+        </footer>
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
